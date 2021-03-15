@@ -1,4 +1,4 @@
-import aiml
+impoort aiml
 import requests
 import json
 import sqlite3 as sq
