@@ -1,5 +1,5 @@
 import aiml
-import os.path
+import os.path as path
 import sqlite3 as sq
 
 SCHEMA = [
@@ -21,7 +21,6 @@ SCHEMA = [
         bot_reply TEXT
     );""",
 ]
-
 
 DB_FILE = "db.sqlite3"
 DATABASE = sq.connect(DB_FILE)
@@ -59,9 +58,15 @@ def init():
     for schema in SCHEMA:
         cursor = cursor.execute(schema)
     cursor.execute("INSERT OR REPLACE INTO User VALUES (0, NULL, NULL, NULL)")
-    cursor.execute("INSERT OR REPLACE INTO Contacts VALUES (0, 'Police', '100', 'Policia')")
-    cursor.execute("INSERT OR REPLACE INTO Contacts VALUES (0, 'Ambulance', '102', 'Save ME!')")
-    cursor.execute("INSERT OR REPLACE INTO Contacts VALUES (0, 'Fire Brigade', '101', 'Fire Fire!')")
+    cursor.execute(
+        "INSERT OR REPLACE INTO Contacts VALUES (0, 'Police', '100', 'Policia')"
+    )
+    cursor.execute(
+        "INSERT OR REPLACE INTO Contacts VALUES (0, 'Ambulance', '102', 'Save ME!')"
+    )
+    cursor.execute(
+        "INSERT OR REPLACE INTO Contacts VALUES (0, 'Fire Brigade', '101', 'Fire Fire!')"
+    )
     DATABASE.commit()
 
 
@@ -70,8 +75,34 @@ if __name__ == '__main__':
     kernel = aiml.Kernel()
     kernel.setTextEncoding(None)
 
-    kernal.bootstrap(learnFiles="startup.xml", commands="LOAD AIML B", chdir="botz")
-    ans = input("Would you like to login or create a new account?\nType 'create' to create and any other key to exit\n")
-    if ans == 'create':
-        create_account()
+    if path.exists(brain := path.join('botz', 'brain')):
+        kernel.bootstrap(brainFile=brain)
+    else:
+        kernel.bootstrap(learnFiles='startup.xml',
+                         commands='LOAD AIML B',
+                         chdir=f"{aiml.__path__[0]}/botdata/standard")
+    inp = 'hello'
+    for _ in range(7):
+        bot_res = kernel.respond(inp)
+        data = kernel.getSessionData(kernel._globalSessionID)
+        print('DATA::', data)
+        print('<<<', bot_res)
+        inp = input('>>> ')
+    kernel.saveBrain('botz/brain')
+    # kernel.bootstrap(learnFiles="startup.xml",
+    #                  commands="LOAD AIML B",
+    #                  chdir=f"{aiml.__path__[0]}/botdata/standard")
+
+    # ans = input(
+    #     "Would you like to login or create a new account?\nType 'create' to create and any other key to exit\n"
+    # )
+    # if ans == 'create':
+    #     create_account()
+
+    # while True:
+    #     user = input(">>> ")
+    #     if user == 'q' or user == 'quit':
+    #         break
+    #     bot = kernel.respond(user)
+    #     print('>>>', bot)
     DATABASE.close()

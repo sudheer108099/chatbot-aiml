@@ -1,2 +1,5 @@
 venv/
 .vscode/
+.python-version
+*.sqlite3
+botz/brain
