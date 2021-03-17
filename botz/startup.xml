@@ -6,7 +6,8 @@
 <template>
 
 <!-- Load standard AIML set -->
-<learn>*.aiml</learn>
+<learn>login.aiml</learn>
+<learn>emergency.aiml</learn>
 
 </template>
 </category>

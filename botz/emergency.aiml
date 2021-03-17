@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<aiml version="1.0">
+
+<meta name="author" content="Kushagra Gupta"/>
+<meta name="language" content="en"/>
+
+<category>
+<pattern>EMERGENCY NUMBERS GALORE</pattern>
+<template>
+<think>
+    <set name="police">100</set>
+    <set name="fire">101</set>
+    <set name="ambulance">102</set>
+</think>
+</template>
+</category>
+
+<category>
+<pattern>HELP ME</pattern>
+<template>
+    police - <get name="police"/><br/>
+    fire brigade - <get name="fire"/><br/>
+    ambulance - <get name="ambulance"/><br/>
+    <get name="relative-name"/> - <get name="relative-contact"/>
+</template>
+</category>
+
+</aiml>

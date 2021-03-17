@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<aiml version="1.0">
+
+<meta name="author" content="Kushagra Gupta"/>
+<meta name="language" content="en"/>
+
+<category>
+<pattern>LOGIN</pattern>
+<template>
+What is your name?
+</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>WHAT IS YOUR NAME</that>
+<template>
+<think><set name="name"><star/></set></think>
+     What is your address?
+</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>WHAT IS YOUR ADDRESS</that>
+<template>
+<think><set name="address"><star/></set></think>
+     What is your phone number?
+</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>WHAT IS YOUR PHONE NUMBER</that>
+<template>
+<think><set name="number"><star/></set></think>
+     Can you name someone you trust?
+</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>CAN YOU NAME SOMEONE YOU TRUST</that>
+<template>
+<think><set name="relative-name"><star/></set></think>
+     What is their relationship with you?
+</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>WHAT IS THEIR RELATIONSHIP WITH YOU</that>
+<template>
+<think><set name="relative-relation"><star/></set></think>
+     What is their phone number?
+</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>WHAT IS THEIR PHONE NUMBER</that>
+<template>
+<think><set name="relative-contact"><star/></set></think>
+     Thank you. Your profile has been created. Please go ahead.
+</template>
+</category>
+
+</aiml>
