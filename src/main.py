@@ -1,6 +1,8 @@
 import aiml
 import os.path as path
 import pickle
+import webbrowser
+from urllib.parse import quote
 
 BOTZ = 'botz'
 
@@ -20,7 +22,14 @@ if __name__ == '__main__':
                          chdir=BOTZ)
     bot_resp = kernel.respond('login')
     while True:
-        print('<<<', bot_resp)
+        if bot_resp.startswith('OPEN BROWSER: '):
+            bot_resp = bot_resp[14:]
+            query_str = bot_resp[bot_resp.find('##') + 2:]
+            url = bot_resp[:bot_resp.find('##')] + quote(query_str)
+            print('<<<', url)
+            webbrowser.open(url, 2)
+        else:
+            print('<<<', bot_resp)
         user_inp = input('>>> ')
         if user_inp == 'bye' or user_inp == 'quit':
             break

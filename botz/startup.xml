@@ -8,6 +8,10 @@
 <!-- Load standard AIML set -->
 <learn>login.aiml</learn>
 <learn>emergency.aiml</learn>
+<learn>help.aiml</learn>
+<learn>std-65percent.aiml</learn>
+<learn>std-dictionary.aiml</learn>
+<learn>std-yesno.aiml</learn>
 
 </template>
 </category>
