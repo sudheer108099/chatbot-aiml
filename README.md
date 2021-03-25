@@ -1,5 +1,5 @@
 # chatbot-aiml
-Chatbot to give electives to students of BPHC
+Chatbot to give replies to alzheimer's disease
 
 ## Instructions:
 1. Unzip bot.zip 
