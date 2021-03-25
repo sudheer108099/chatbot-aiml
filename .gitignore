@@ -1,3 +1,4 @@
 .vscode/
 .python-version
 botz/kernel
+__pycache__
