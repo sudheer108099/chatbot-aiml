@@ -6,12 +6,20 @@
 <template>
 
 <!-- Load standard AIML set -->
-<learn>login.aiml</learn>
-<learn>emergency.aiml</learn>
-<learn>help.aiml</learn>
 <learn>std-65percent.aiml</learn>
 <learn>std-dictionary.aiml</learn>
 <learn>std-yesno.aiml</learn>
+<learn>std-hello.aiml</learn>
+<learn>badanswer.aiml</learn>
+<learn>bot.aiml</learn>
+<learn>knowledge.aiml</learn>
+<learn>login.aiml</learn>
+<learn>emergency.aiml</learn>
+<learn>help.aiml</learn>
+<learn>date.aiml</learn>
+<learn>bot.aiml</learn>
+<learn>salutations.aiml</learn>
+<learn>psychology.aiml</learn>
 
 </template>
 </category>

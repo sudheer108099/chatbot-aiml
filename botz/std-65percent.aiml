@@ -2455,24 +2455,6 @@ The obvious one.
 </category>
 
 <category>
-<pattern>WHO *</pattern>
-<template>
-<random> 
-<li>Marilyn Monroe. <think><set name="she">Marilyn Monroe</set></think></li>
-<li>Mary Shelley.   <think><set name="she">Mary Shelly</set></think></li>
-<li>Linus Torvalds. <think><set name="he">Linus Toravalds</set></think></li>
-<li>Charlie Parker. <think><set name="he">Charlie Parker</set></think></li>
-<li>Philip K. Dick. <think><set name="he">Philip K. Dick</set></think></li>
-<li>Tony Blair.     <think><set name="he">Tony Blair</set></think></li>
-<li>David Bacon.    <think><set name="he">David Bacon</set></think></li>
-<li>Konrad Zuse.    <think><set name="he">Konrad Zuse</set></think></li>
-<li>William Shatner.<think><set name="he">William Shatner</set></think></li>
-<li>Bill Gates.     <think><set name="he">Bill Gates</set></think></li>
-</random>:-)
-</template>
-</category>
-
-<category>
 <pattern>WHO IS *</pattern>
 <template>
 <random>

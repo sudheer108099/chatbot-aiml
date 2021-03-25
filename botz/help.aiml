@@ -6,7 +6,23 @@
 <meta name="language" content="en"/>
 
 <category>
-<pattern>WHO IS *</pattern>
+<pattern>WHAT IS MY NAME</pattern>
+<template>
+Your name is <get name = "name"/>.
+</template>
+</category>
+
+
+<category>
+<pattern>WHO AM I</pattern>
+<template>
+<srai>WHAT IS MY NAME</srai>
+</template>
+</category>
+
+
+<category>
+<pattern>WHO IS _</pattern>
 <template>
 OPEN BROWSER: https://google.com/search?q=##<star/>
 </template>
@@ -16,13 +32,6 @@ OPEN BROWSER: https://google.com/search?q=##<star/>
 <pattern>WHERE IS *</pattern>
 <template>
 OPEN BROWSER: https://www.google.co.in/maps/search/##<star/>
-</template>
-</category>
-
-<category>
-<pattern>WHAT IS MY NAME</pattern>
-<template>
-Your name is <get name = "name"/>.
 </template>
 </category>
 
@@ -56,23 +65,12 @@ Your number is <get name="number"/>
 
 <category>
 <pattern>WHO IS MY FAMILY</pattern>
-<template>Your family member is <get name="relative-name"/>. Do you want their number?</template>
+<template>Your family member is <get name="relative-name"/>.</template>
 </category>
 
 <category>
-<pattern>YES</pattern>
-<that>Your family member is <get name="relative-name"/>. Do you want their number?</that>
-<template>Sure, here is the member's number - <get name="relative-contact"/>.
-Do you want to know your relation with him/her?</template>
-</category>
-
-<category>
-<pattern>YES</pattern>
-<that>Sure, here is the member's number - <get name="relative-contact"/>.
-Do you want to know your relation with him/her?</that>
-<template>
-<get name="relative-name"/> is your <get name="relative-relation"/>
-</template>
+<pattern>WHAT IS _ NUMBER</pattern>
+<template>Here is <underscore/> number - <get name="relative-contact"/>.</template>
 </category>
 
 </aiml>
